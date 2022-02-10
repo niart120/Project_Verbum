@@ -15,11 +15,11 @@ def main():
     for _ in range(10):
         q = solver.get_query(candidates)
         if len(candidates)==1:
-            id = candidates.pop()
+            id = list(candidates)[0]
             q = solver.names[id]
         respond = wordle.query(q)
         parsed = Wordle.parse(respond)
-        print(f"question:{q}/respond:{parsed}")
+        print(f"question:{q}/respond:{parsed}/(candidates_size:{len(candidates)})")
         if Wordle.is_correct(respond):
             break
         #update candidates
