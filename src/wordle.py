@@ -10,9 +10,15 @@ class Wordle():
             self.questions = set(questions)
         self.set_answer()
     
-    def set_answer(self):
-        self.answer = random.choice(list(self.problems))
-    
+    def set_answer(self, answer=None):
+        if answer is None:
+            self.answer = random.choice(list(self.problems))
+        else:
+            if answer in self.problems:
+                self.answer = answer
+            else:
+                raise ValueError("Exception: The word does not exist.")
+
     def get_answer(self):
         return self.answer
 
