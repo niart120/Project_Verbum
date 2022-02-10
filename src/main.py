@@ -6,8 +6,9 @@ def main():
     names = []
     with open("./names.json",encoding="utf-8") as js:
         names.extend(json.load(js))
-    wordle = Wordle(names)
+
     solver = Solver()
+    wordle = Wordle(names)
 
     print(f"(answer is '{wordle.get_answer()}')")
 
