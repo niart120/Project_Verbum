@@ -47,8 +47,9 @@ class Wordle():
                 a[i] = "_"
                 b[i] = "#"
         
-        for i in range(4):
-            for j in range(i+1,5):
+        for i in range(5):
+            for j in range(5):
+                if i==j:continue
                 if a[i]==b[j]:
                     r[i] = 1
                     a[i] = "_"
