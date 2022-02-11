@@ -15,7 +15,7 @@ Python3.6 or higher
 
 コマンドを実行すると, ランダムなお題(第八世代までのポケモン)についての解法が出力されます
 ```
-git clone https://github.com/niart120/Project_Xs.git
+git clone https://github.com/niart120/Project_Verbum.git
 cd ./Project_Verbum
 python3 ./src/main.py
 ```
