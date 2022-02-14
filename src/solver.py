@@ -41,11 +41,6 @@ class Solver(object):
 
         reverse_dict = {}
         subset_dict_list = [{} for _ in range(n)]
-        subset_keys = [(1, 0, 2, 0, 1), (2, 0, 0, 2, 0), (0, 2, 1, 2, 2), (2, 0, 1, 0, 0), (2, 1, 1, 0, 1), (0, 2, 1, 0, 2), (1, 1, 2, 0, 1), (2, 2, 1, 2, 0), (1, 2, 1, 2, 2), (2, 1, 1, 1, 2), (0, 1, 1, 2, 2), (0, 1, 1, 0, 2), (2, 0, 0, 2, 2), (1, 1, 2, 1, 2), (2, 0, 1, 0, 2), (0, 2, 2, 2, 0), (1, 2, 2, 0, 1), (2, 0, 1, 1, 1), (2, 1, 1, 2, 0), (2, 0, 2, 1, 0), (2, 1, 2, 1, 1), (1, 1, 0, 0, 2), (2, 2, 1, 2, 2), (2, 1, 2, 2, 0), (0, 1, 2, 2, 0), (0, 2, 2, 1, 1), (0, 2, 0, 2, 0), (1, 1, 0, 2, 2), (2, 0, 1, 2, 1), (0, 2, 2, 2, 2), (2, 2, 2, 1, 0), (2, 1, 1, 2, 2), (2, 2, 1, 0, 1), (2, 0, 2, 1, 2), (1, 0, 2, 1, 0), (2, 0, 2, 2, 1), (2, 1, 2, 2, 2), (0, 1, 2, 2, 2), (2, 1, 0, 2, 1), (0, 2, 0, 2, 2), (2, 0, 0, 0, 0), (2, 1, 0, 0, 1), (1, 1, 1, 2, 0), (2, 2, 0, 1, 0), (2, 2, 2, 1, 2), (0, 0, 2, 1, 2), (0, 0, 0, 2, 0), (0, 1, 2, 0, 1), (1, 0, 2, 2, 0), (1, 0, 2, 1, 2), (1, 2, 1, 0, 2), (1, 1, 2, 2, 1), (1, 2, 2, 1, 0), (0, 2, 1, 2, 1), (1, 1, 1, 2, 2), (2, 2, 0, 1, 2), (0, 0, 0, 2, 2), (1, 0, 2, 2, 2), (2, 1, 2, 0, 0), (0, 2, 1, 1, 2), (1, 2, 1, 2, 1), (0, 2, 0, 0, 0), (0, 0, 1, 2, 2), (1, 0, 1, 2, 0), (1, 2, 2, 1, 2), (1, 2, 2, 2, 1), (2, 2, 1, 1, 0), (2, 0, 1, 0, 1), (2, 1, 1, 0, 2), (1, 2, 0, 0, 1), (2, 2, 2, 0, 1), (2, 0, 2, 0, 1), (1, 1, 2, 0, 2), (2, 1, 2, 1, 0), (2, 1, 2, 0, 2), (2, 2, 1, 2, 1), (0, 2, 2, 1, 0), (0, 2, 0, 0, 2), (1, 0, 1, 2, 2), (1, 2, 0, 1, 2), (1, 2, 0, 2, 1), (2, 2, 2, 2, 1), (0, 0, 2, 2, 1), (1, 0, 0, 2, 2), (2, 2, 1, 1, 2), (2, 0, 1, 1, 2), (0, 2, 2, 0, 1), (0, 0, 0, 0, 0), (2, 2, 0, 0, 1), (2, 0, 2, 1, 1), (2, 0, 2, 2, 0), (2, 1, 2, 1, 2), (2, 1, 2, 2, 1), (1, 1, 0, 1, 2), (0, 1, 2, 2, 1), (2, 1, 0, 1, 2), (0, 2, 2, 1, 2), (2, 2, 0, 2, 1), (1, 0, 2, 0, 0), (1, 1, 1, 0, 2), (2, 0, 0, 0, 2), (0, 1, 2, 1, 2), (0, 2, 0, 1, 2), (2, 0, 2, 2, 2), (1, 2, 1, 0, 1), (1, 1, 2, 2, 0), (1, 2, 1, 1, 2), (2, 1, 1, 1, 1), (0, 2, 1, 2, 0), (1, 0, 2, 0, 2), (1, 1, 1, 2, 1), (2, 0, 0, 1, 2), (2, 0, 0, 2, 1), (1, 2, 2, 0, 0), (0, 1, 1, 1, 2), (1, 1, 1, 1, 2), (1, 1, 2, 2, 2), (0, 0, 1, 2, 1), (1, 2, 2, 1, 1), (1, 2, 2, 2, 0), (0, 0, 0, 1, 2), (1, 2, 0, 0, 0), (2, 2, 2, 0, 0), (2, 0, 1, 2, 0), (1, 2, 2, 0, 2), (0, 2, 2, 2, 1), (2, 0, 2, 0, 0), (0, 0, 2, 0, 0), (2, 1, 1, 2, 1), (2, 1, 2, 0, 1), (2, 2, 1, 0, 0), (2, 1, 0, 2, 0), (2, 2, 2, 2, 0), (1, 2, 0, 2, 0), (1, 2, 2, 2, 2), (0, 2, 0, 2, 1), (0, 0, 2, 2, 0), (2, 2, 1, 1, 1), (2, 1, 0, 0, 0), (0, 2, 2, 0, 0), (2, 2, 0, 0, 0), (1, 2, 0, 0, 2), (2, 2, 2, 0, 2), (2, 0, 1, 2, 2), (2, 2, 2, 1, 1), (2, 0, 2, 0, 2), (0, 0, 2, 0, 2), (0, 0, 0, 0, 2), (2, 2, 1, 0, 2), (2, 1, 0, 1, 1), (0, 1, 0, 2, 2), (2, 2, 0, 2, 0), (2, 1, 0, 2, 2), (2, 2, 2, 2, 2), (1, 2, 0, 2, 2), (0, 0, 2, 2, 2), (0, 1, 2, 1, 1), (2, 1, 0, 0, 2), (0, 2, 2, 0, 2), (2, 2, 0, 0, 2), (2, 2, 0, 1, 1), (0, 0, 0, 2, 1), (0, 1, 2, 0, 2), (1, 0, 2, 2, 1), (1, 2, 1, 1, 1), (1, 2, 1, 2, 0), (2, 2, 0, 2, 2), (2, 1, 1, 1, 0)]
-
-        for subset_dict in subset_dict_list:
-            for t in subset_keys:
-                subset_dict[t] = []
 
         for i in range(n):
             answer = names[i]
@@ -53,11 +48,14 @@ class Solver(object):
             for j in range(n):
                 question = names[j]
                 d = distance(question,answer)
-                subset_dict_list[j][d].append(i)
+                if d in subset_dict_list[j]:
+                    subset_dict_list[j][d].append(i)
+                else:
+                    subset_dict_list[j][d] = [i]
         
         for subset_dict in subset_dict_list:
-            for t in subset_keys:
-                subset_dict[t] = set(subset_dict[t])
+            for k,v in subset_dict.items():
+                subset_dict[k] = set(v)
 
         self.subset_dict_list = subset_dict_list
         self.n = n
@@ -67,7 +65,6 @@ class Solver(object):
     def get_query(self, candidates = None):
         if candidates is None:
             candidates = set(range(self.n))
-
         lst = []
         for i in range(self.n):
             eta = self.get_entropy(i, candidates), self.names[i]
@@ -78,6 +75,7 @@ class Solver(object):
     def get_entropy(self, id, eventset = None):
         if eventset is None:
             eventset = set(range(self.n))
+        eventset = set(eventset)
         n = len(eventset)
         entropy = 0
         for subset in self.subset_dict_list[id].values():
@@ -92,17 +90,24 @@ class Solver(object):
 
     def get_entropy_byname(self, name, eventset = None):
         id = self.reverse_dict[name]
-        return get_entropy(id,eventset)
+        return self.get_entropy(id,eventset)
 
     def get_informationcontent(self, id, respond, eventset = None):
         if eventset is None:
             eventset = set(range(self.n))
-        pass
+        eventset = set(eventset)
+        n = len(eventset)
+        jointset = subset & eventset
+        k = len(jointset)
+        p = k/n
+        entropy = 0
+        if p!=0:
+            entropy = -math.log2(p)
+        return entropy
 
     def get_informationcontent_byname(self, name, respond, eventset=None):
-        if eventset is None:
-            eventset = set(range(self.n))
-        pass
+        id = self.reverse_dict[name]
+        return self.get_informationcontent(id, respond)
 
     def get_subset(self, id, respond):
         return self.subset_dict_list[id][respond]
