@@ -17,7 +17,7 @@ Python3.6 or higher
 ```
 git clone https://github.com/niart120/Project_Verbum.git
 cd ./Project_Verbum
-python3 ./src/main.py
+python3 ./src/randomtest.py
 ```
 
 ## Credits
